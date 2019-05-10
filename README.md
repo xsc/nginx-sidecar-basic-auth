@@ -1,5 +1,8 @@
 # nginx-sidecar-basic-auth
 
+[![](https://images.microbadger.com/badges/version/xscys/nginx-sidecar-basic-auth.svg)](https://hub.docker.com/r/xscys/nginx-sidecar-basic-auth)
+[![](https://images.microbadger.com/badges/image/xscys/nginx-sidecar-basic-auth.svg)](https://hub.docker.com/r/xscys/nginx-sidecar-basic-auth)
+
 This is a Docker image that provides an [nginx][nginx] proxy server enforcing
 HTTP basic authentication on every request (exception `OPTIONS`). It is suitable
 for operation within [OpenShift][openshift], e.g. as a sidecar container.
