@@ -6,12 +6,15 @@ MAINTAINER "Yannick Scherer <yannick.scherer@gmail.com>"
 # --------------------
 EXPOSE 8087
 ENV NGINX_VERSION=1.12.2 \
-    DOCKERIZE_VERSION=v0.6.1 \
-    PORT=8087 \
-    FORWARD_HOST=localhost \
-    FORWARD_PORT=8080 \
-    BASIC_AUTH_USERNAME=admin \
-    BASIC_AUTH_PASSWORD=admin
+  DOCKERIZE_VERSION=v0.6.1 \
+  PORT=8087 \
+  FORWARD_HOST=localhost \
+  FORWARD_PORT=8080 \
+  BASIC_AUTH_USERNAME=admin \
+  BASIC_AUTH_PASSWORD=admin \
+  PROXY_READ_TIMEOUT=60s \
+  PROXY_SEND_TIMEOUT=60s \
+  CLIENT_MAX_BODY_SIZE=1m
 
 # --------------------
 # DEPENDENCIES
@@ -32,7 +35,7 @@ COPY default.conf.tpl nginx.conf.tpl /templates/
 # FILL TEMPLATES & GO
 # --------------------
 CMD htpasswd -Bbn "$BASIC_AUTH_USERNAME" "$BASIC_AUTH_PASSWORD" > /etc/nginx/auth.htpasswd && \
-    dockerize \
-      -template /templates/default.conf.tpl:/etc/nginx/conf.d/default.conf \
-      -template /templates/nginx.conf.tpl:/etc/nginx/nginx.conf \
-      nginx
+  dockerize \
+  -template /templates/default.conf.tpl:/etc/nginx/conf.d/default.conf \
+  -template /templates/nginx.conf.tpl:/etc/nginx/nginx.conf \
+  nginx
