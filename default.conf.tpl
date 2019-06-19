@@ -23,5 +23,7 @@ server {
         proxy_read_timeout {{ .Env.PROXY_READ_TIMEOUT }};
         proxy_send_timeout {{ .Env.PROXY_SEND_TIMEOUT }};
         client_max_body_size {{ .Env.CLIENT_MAX_BODY_SIZE }};
+        proxy_request_buffering {{ .Env.PROXY_REQUEST_BUFFERING }};
+        proxy_buffering {{ .Env.PROXY_BUFFERING }};
     }
 }
