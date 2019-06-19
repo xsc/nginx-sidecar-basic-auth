@@ -15,7 +15,7 @@ for operation within [OpenShift][openshift], e.g. as a sidecar container.
 Configuration is provided using environment variables:
 
 | Environment              | Description                                                        | Default Value |
-| ----------------------- -| ------------------------------------------------------------------ | ------------- |
+| -------------------------| ------------------------------------------------------------------ | ------------- |
 | `PORT`                   | Port to listen on                                                  | `8087`        |
 | `FORWARD_HOST`           | Hostname of the backend server to proxy to                         | `localhost`   |
 | `FORWARD_PORT`           | Port of the backend server to proxy to                             | `8080`        |
