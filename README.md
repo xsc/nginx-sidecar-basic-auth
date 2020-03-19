@@ -28,6 +28,7 @@ Configuration is provided using environment variables:
 | `PROXY_BUFFERING`         | Enables or disables buffering of responses from the proxied server | `on`          |
 | `WEBSOCKET_PATH`          | Activates websocket handling on the given path                     | (none)        |
 | `FORWARD_WEBSOCKET_PATH`  | If the remote path differs from `WEBSOCKET_PATH`, use this         | (none)        |
+| `HEALTH_PATH`             | For health checks. No authentication required on this path         | (none)        |
 
 
 ## Usage
